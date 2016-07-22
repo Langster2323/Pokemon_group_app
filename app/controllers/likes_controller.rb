@@ -27,5 +27,11 @@ class LikesController < ApplicationController
   end
 
   def destroy
+    if Like.exists?(params[:id])
+      Like.destroy(params[:id])
+      render json: { message: "Like disliked" }, status: 200
+    else
+      render json: { message: "Unrecognizable Action" }, status: 404
+    end
   end
 end
