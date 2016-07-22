@@ -25,8 +25,8 @@ class CommentsController < ApplicationController
   end
 
   def update
-    pokemon.find (params[:id])
-    if comment.update(pokemon_id: params[:pokemon_id], quantity: params[:quantity])
+    comment.find (params[:id])
+    if comment.update(comment_id: params[:comment_id], quantity: params[:quantity])
     else
       render json: comment.errors.to_json, status: :unprocessable_entity
     end
