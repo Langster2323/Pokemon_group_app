@@ -15,21 +15,21 @@ class UsersController < ApplicationController
   end
 
   def create
-    users = User.new(id: params[:id])
+    user = User.new(id: params[:id])
 
     if User.save
-      render json: users.to_json, status: 200
+      render json: user.to_json, status: 200
     else
-      render json: users.errors.to_json, status: :unprocessable_entity
+      render json: user.errors.to_json, status: :unprocessable_entity
     end
   end
 
   def update
-  users = User.find (params[:id])
-    if users.update(user_id: params[:user_id], quantity: params[:quantity])
-      render json: order.to_json, status: 200
+  user = User.find (params[:id])
+    if user.update(user_id: params[:user_id], quantity: params[:quantity])
+      render json: { user: user, message: '', status: 200 }
     else
-      render json: order.errors.to_json, status: :unprocessable_entity
+      render json: { user: user, message: '', status: 404 }
     end
   end
 
