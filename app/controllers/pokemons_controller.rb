@@ -4,8 +4,8 @@ class PokemonsController < ApplicationController
   end
 
   def show
-    if Pokemon.exists?(params{pokemon_id})
-      render Pokemon.all[pokemon.id].to_json, status: 200
+    if Pokemon.exists?(params[:id])
+      render Pokemon.find(params[:id]).to_json, status: 200
     else
       render json: { message: "Not Found" }, status: 400
     end
@@ -15,23 +15,30 @@ class PokemonsController < ApplicationController
   end
 
   def create
-    Pokemon.new(id: params[:id])
+      pokemon = Pokemon.new(pokemon_params)
 
-    if Pokemon.save
-      render json: pokemons.to_json, status: 200
+    if pokemon.save
+      render json: pokemon.to_json, status: 200
     else
-      render json: pokemons.errors.to_json, status: :unprocessable_entity
+      render json: pokemon.errors.to_json, status: :unprocessable_entity
     end
   end
 
   def update
-    Pokemon.find (params[:id])
-    if pokemons.update(pokemon_id: params[:pokemon_id], quantity: params[:quantity])
+    pokemon = Pokemon.find(params[:id])
+    if pokemon.update(pokemon_params)
+      render json: pokemon 
     else
       render json: pokemons.errors.to_json, status: :unprocessable_entity
     end
   end
 
   def destroy
+  end
+
+  private
+
+  def pokemon_params
+    params.require(:pokemon).permit(:name, :types, :height, :weight)
   end
 end
