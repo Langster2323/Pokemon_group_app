@@ -15,12 +15,12 @@ class PokemonsController < ApplicationController
   end
 
   def create
-      pokemon = Pokemon.new(pokemon_params)
+      pokemons = Pokemon.new(pokemon_params)
 
-    if pokemon.save
-      render json: pokemon.to_json, status: 200
+    if pokemons.save
+      render json: pokemons.to_json, status: 200
     else
-      render json: pokemon.errors.to_json, status: :unprocessable_entity
+      render json: pokemons.errors.to_json, status: :unprocessable_entity
     end
   end
 
