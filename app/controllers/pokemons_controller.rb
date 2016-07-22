@@ -18,17 +18,17 @@ class PokemonsController < ApplicationController
     Pokemon.new(id: params[:id])
 
     if Pokemon.save
-      render json: pokemon.to_json, status: 200
+      render json: pokemons.to_json, status: 200
     else
-      render json: pokemon.errors.to_json, status: :unprocessable_entity
+      render json: pokemons.errors.to_json, status: :unprocessable_entity
     end
   end
 
   def update
     Pokemon.find (params[:id])
-    if pokemon.update(pokemon_id: params[:pokemon_id], quantity: params[:quantity])
+    if pokemons.update(pokemon_id: params[:pokemon_id], quantity: params[:quantity])
     else
-      render json: pokemon.errors.to_json, status: :unprocessable_entity
+      render json: pokemons.errors.to_json, status: :unprocessable_entity
     end
   end
 
