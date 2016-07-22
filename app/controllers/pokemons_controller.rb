@@ -27,7 +27,7 @@ class PokemonsController < ApplicationController
   def update
     pokemon = Pokemon.find(params[:id])
     if pokemon.update(pokemon_params)
-      render json: pokemon 
+      render json: pokemon
     else
       render json: pokemons.errors.to_json, status: :unprocessable_entity
     end
