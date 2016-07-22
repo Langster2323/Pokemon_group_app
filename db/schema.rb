@@ -32,20 +32,17 @@ ActiveRecord::Schema.define(version: 20160722153807) do
   end
 
   create_table "pokemons", force: :cascade do |t|
-    t.string   "name"
-    t.string   "type"
-    t.string   "description"
-    t.integer  "height"
-    t.integer  "weight"
-    t.string   "abilities"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string  "name"
+    t.string  "types"
+    t.string  "description"
+    t.integer "height"
+    t.integer "weight"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "password_digest"
-    t.string   "authtoken"
+    t.string   "username",        null: false
+    t.string   "password_digest", null: false
+    t.string   "authtoken",       null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
