@@ -34,6 +34,12 @@ class PokemonsController < ApplicationController
   end
 
   def destroy
+    if Pokemon.exists?(params[:id])
+      Pokemon.destroy(params[:id])
+      render json: { message: "Pokemon destroyed." }, status: 200
+    else
+      render json: { message: "Pokemon not found." }, status: 400
+    end
   end
 
   private
