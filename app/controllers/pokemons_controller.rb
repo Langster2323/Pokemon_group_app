@@ -4,7 +4,7 @@ class PokemonsController < ApplicationController
   end
 
   def show
-    if pokemon.exists?(params{pokemon_id})
+    if Pokemon.exists?(params{pokemon_id})
       render Pokemon.all[pokemon.id].to_json, status: 200
     else
       render json: { message: "Not Found" }, status: 400
@@ -17,7 +17,7 @@ class PokemonsController < ApplicationController
   def create
     Pokemon.new(id: params[:id])
 
-    if pokemon.save
+    if Pokemon.save
       render json: pokemon.to_json, status: 200
     else
       render json: pokemon.errors.to_json, status: :unprocessable_entity
@@ -25,7 +25,7 @@ class PokemonsController < ApplicationController
   end
 
   def update
-    pokemon.find (params[:id])
+    Pokemon.find (params[:id])
     if pokemon.update(pokemon_id: params[:pokemon_id], quantity: params[:quantity])
     else
       render json: pokemon.errors.to_json, status: :unprocessable_entity
