@@ -5,7 +5,7 @@ class PokemonsController < ApplicationController
 
   def show
     if Pokemon.exists?(params[:id])
-      render Pokemon.find(params[:id]).to_json, status: 200
+      render json: Pokemon.find(params[:id]).to_json, status: 200
     else
       render json: { message: "Not Found" }, status: 400
     end
