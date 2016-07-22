@@ -4,11 +4,6 @@ class CommentsController < ApplicationController
   end
 
   def show
-    if Comment.exists?(params{comment_id})
-      render Comment.all[comment.id].to_json, status: 200
-    else
-      render json: { message: "Not Found" }, status: 400
-    end
   end
 
   def edit
