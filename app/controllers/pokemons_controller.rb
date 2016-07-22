@@ -1,6 +1,6 @@
 class PokemonsController < ApplicationController
   def index
-    render json: pokemon.all, status: 200
+    render json: Pokemon.all, status: 200
   end
 
   def show
