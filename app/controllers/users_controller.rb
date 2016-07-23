@@ -43,7 +43,16 @@ class UsersController < ApplicationController
 
   end
 
+  private
+
   def user_params
     params.require(:user).permit(:name, :password, :email)
   end
+
+  protected
+    def authenticate_via_token
+      authenticate_or_request_with_http_token do |token, _|
+        User.find_by(auth_token: token)
+    end
+    end
 end
