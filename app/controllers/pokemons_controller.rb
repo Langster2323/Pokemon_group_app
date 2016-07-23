@@ -1,6 +1,6 @@
 class PokemonsController < ApplicationController
   def index
-    render json: Pokemon.top.to_json(include: :likes, methods: :like_count), status: 200
+    render json: Pokemon.all.to_json(include: :likes, methods: :like_count), status: 200
   end
 
   def show
