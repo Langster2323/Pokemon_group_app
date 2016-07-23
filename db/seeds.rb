@@ -8,3 +8,9 @@
 850.times do
   Pokemon.create!(name: "pokemon", types: "water", height: 0, weight: 0)
 end
+
+user = ["Ahkeem", "Rob", "Kate", "Matt", "Mark", "Dane", "Justin", "Deon", "Al", "Max"]
+
+user.each do |username|
+  user = User.create!(username: user, password_digest: "password")
+end
