@@ -4,4 +4,6 @@ class Pokemon < ApplicationRecord
   validates :height, presence: true
   validates :weight, presence: true
 
+  has_many :likes
+
 end
