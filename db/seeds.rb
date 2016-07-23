@@ -9,8 +9,8 @@
   Pokemon.create!(name: "pokemon", types: "water", height: 0, weight: 0)
 end
 
-user = ["Ahkeem", "Rob", "Kate", "Matt", "Mark", "Dane", "Justin", "Deon", "Al", "Max"]
+users = ["Ahkeem", "Rob", "Kate", "Matt", "Mark", "Dane", "Justin", "Deon", "Al", "Max"]
 
-user.each do |username|
-  user = User.create!(username: user.sample, password: "password")
+users.each do |username|
+  User.create!(username: username, password: "password")
 end

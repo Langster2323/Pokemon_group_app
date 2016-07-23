@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20160722153807) do
   create_table "pokemons", force: :cascade do |t|
     t.string  "name"
     t.string  "types"
-    t.string  "description"
     t.integer "height"
     t.integer "weight"
   end
@@ -42,7 +41,7 @@ ActiveRecord::Schema.define(version: 20160722153807) do
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
     t.string   "password_digest", null: false
-    t.string   "authtoken",       null: false      
+    t.string   "authtoken",       null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
