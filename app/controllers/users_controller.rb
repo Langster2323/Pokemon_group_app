@@ -14,11 +14,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # render json: User.find(params[:id])
-    if current_user != user
-      render json: { message: "You cannot edit other users only you." }
-      redirect_to_users_path
-    end
+    render json: User.find(params[:id])
+    # if current_user != user
+    #   render json: { message: "You cannot edit other users only you." }
+    #   redirect_to_users_path
+    # end
   end
 
   def create
