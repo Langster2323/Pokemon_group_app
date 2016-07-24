@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     if user.present? && user.authenticate(params.fetch(:password))
       render json: {authtoken: user.authtoken}
     else
-      render status: 401
+      # render status: 401
     end
   end
 end
