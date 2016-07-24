@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def edit
     # render json: User.find(params[:id])
     if current_user != user
-      flash[:alert] = "You cannot edit other users only you."
+      render json: flash[:alert] = "You cannot edit other users only you."
       redirect_to_users_path
     end
   end
