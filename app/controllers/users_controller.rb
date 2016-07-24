@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit]
+  # before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_user!, only: [:new, :edit]
   def index
     render json: User.all, status: 200
   end
 
   def show
-    if User.exists?(params[user.id])
-      render User.find(params.fetch(:id)), status: 200
+    if User.exists?(params[:id])
+      render json: User.find(params.fetch(:id)), status: 200
     else
       render json: { message: "Not Found" }, status: 400
     end
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(id: params[:id])
+    User.new(id: params[:id])
 
     if user.save
       render json: user.to_json, status: 200
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def update
-  user = User.find (params[:id])
+  User.find (params[:id])
     if user.update(user_id: params[:user_id])
       render json: { user: user, message: '', status: 200 }
     else

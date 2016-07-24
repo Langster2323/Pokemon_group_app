@@ -6,10 +6,10 @@ class Pokemon < ApplicationRecord
 
   has_many :likes
 
-  def self.top
-    joins("join likes on like.pokemons_id = pokemons.id")
-    .group("pokemons.id, pokemons.name")
-    .order("count(likes.id) desc")
-  end
+  # def self.top
+  #   joins("join likes on like.pokemons_id = pokemons.id")
+  #   .group("pokemons.id, pokemons.name")
+  #   .order("count(likes.id) desc")
+  # end
 
 end
