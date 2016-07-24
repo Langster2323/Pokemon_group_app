@@ -11,5 +11,5 @@
 users = ["Ahkeem", "Rob", "Kate", "Matt", "Mark", "Dane", "Justin", "Deon", "Al", "Max"]
 
 users.each do |username|
-  User.create!(id: "", username: username, password: "password")
+  User.create!(username: username, password: "password")
 end
