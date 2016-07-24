@@ -14,7 +14,7 @@ class LikesController < ApplicationController
   end
 
   def create
-    Like.new(id: params[:id])
+    like = Like.new(id: params[:id])
 
     if like.save
       render json: like.to_json, status: 200
@@ -33,5 +33,11 @@ class LikesController < ApplicationController
     # else
     #   render json: { message: "Unrecognizable Action" }, status: 404
     # end
+  end
+
+  private
+
+  def like_params
+    params.require(:like).permit(:pokemon_id)
   end
 end

@@ -8,8 +8,8 @@
 
 
 
-users = ["Ahkeem", "Rob", "Kate", "Matt", "Mark", "Dane", "Justin", "Deon", "Al", "Max"]
+user = ["Ahkeem", "Rob", "Kate", "Matt", "Mark", "Dane", "Justin", "Deon", "Al", "Max"]
 
-users.each do |username|
+user.each do |username|
   User.create!(username: username, password: "password")
 end
