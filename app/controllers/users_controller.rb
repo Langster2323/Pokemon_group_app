@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit]
+  # before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_user!, only: [:new, :edit]
   def index
     render json: User.all, status: 200
   end
@@ -14,11 +14,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # render json: User.find(params[:id])
-    # if current_user != user
-    #   render json: { message: "You cannot edit other users only you." }
-    #   redirect_to_users_path
-    # end
   end
 
   def create
@@ -32,9 +27,9 @@ class UsersController < ApplicationController
   end
 
   def update
-  user = User.find(params[:id])
-    if user.update(user_params)
-      render json: user, status: 200
+  User.find (params[:id])
+    if user.update(user_id: params[:user_id])
+      render json: { user: user, message: '', status: 200 }
     else
       render json: { user: user, message: '', status: 404 }
     end
