@@ -4,14 +4,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    if User.exists?(params{user.id})
-      render User.all[user_id].to_json, status: 200
+    if User.exists?(params[user.id])
+      render User.find(params.fetch(:id)), status: 200
     else
       render json: { message: "Not Found" }, status: 400
     end
   end
 
   def edit
+    # render json: User.find(params[:id])
   end
 
   def create
@@ -26,7 +27,7 @@ class UsersController < ApplicationController
 
   def update
   user = User.find (params[:id])
-    if user.update(user_id: params[:user_id], quantity: params[:quantity])
+    if user.update(user_id: params[:user_id])
       render json: { user: user, message: '', status: 200 }
     else
       render json: { user: user, message: '', status: 404 }
