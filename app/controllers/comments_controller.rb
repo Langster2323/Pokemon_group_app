@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+
   def index
     render json: Comment.all, status: 200
   end
@@ -28,5 +30,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    if Comment.exists?(params[:id])
+      Comment.destroy(params[:id])
+      render json: { message: "Comment destroyed." }, status: 200
+    else
+      render json: { message: "Comment not found." }, status: 400
+    end
   end
 end
