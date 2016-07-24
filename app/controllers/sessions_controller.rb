@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     # end
     user = User.find_by(username: params[:username])
     if user.present? && user.authenticate(params.fetch(:password))
-      render json: { message: "Found it"}, status: 200
+      render json: {authtoken: user.authtoken}, status: 200
     # render json: {authtoken: user.authtoken}
     else
       render json: { message: "Not found"}, status: 401
