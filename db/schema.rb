@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20160725042530) do
     t.string   "username",        null: false
     t.string   "password_digest", null: false
     t.string   "authtoken",       null: false
-    t.string   "favorite",        null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "profileImg"
