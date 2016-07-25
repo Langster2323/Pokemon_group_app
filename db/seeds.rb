@@ -15,8 +15,3 @@ user = ["Ahkeem", "Rob", "Kate", "Matt", "Mark", "Dane", "Justin", "Deon", "Al",
 user.each do |username|
   User.create!(username: username, password: "password")
 end
-
-100.times do
-  like = Like.new(user_id: user.id, pokemon_id: pokemon.id)
-  like.save
-end
