@@ -71,14 +71,23 @@ Users
 http://localhost:3000/users
 http://localhost:3000/users/1
 
+
+
+
 Pokemons
 -Pokemon can be favorited & like_id
 -Pokemon can be edited & destroyed
 http://localhost:3000/pokemon
 
+
+
+
 Run test
 -rails s
 => http://localhost:3000 copy & then paste this into URL.
+
+
+
 
 -make sure local server is still running on terminal.
 You can login as one of the users.
@@ -86,15 +95,57 @@ You can login as one of the users.
 -http://localhost:3000/users/1
 -http://localhost:3000/pokemond
 
+
+
+
 Built with:
 -Postgresql
 -Ruby
 -Rails
 -Active Record
 
+
+
+
+
 Authors:
 Caryn
 Mark
 Ahkeem
+Pokemon app from github:
+https://github.com/Langster2323/Pokemon_group_app
+
+
+
+
+Controllers:
+https://github.com/Langster2323/Pokemon_group_app/tree/master/app/controllers
+
+
+
+
+Models:
+https://github.com/Langster2323/Pokemon_group_app/tree/master/app/models
+
+
+
+
+Database:
+https://github.com/Langster2323/Pokemon_group_app/tree/master/db
+
+
+
+
+Routes:
+https://github.com/Langster2323/Pokemon_group_app/blob/master/config/routes.rb
+
+
+
+
+Gemfile:
+https://github.com/Langster2323/Pokemon_group_app/blob/master/Gemfile
+
+
+
 
 Give it a shot!
