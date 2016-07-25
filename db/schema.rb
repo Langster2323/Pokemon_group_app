@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725022645) do
+ActiveRecord::Schema.define(version: 20160725042530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20160725022645) do
     t.string   "username",        null: false
     t.string   "password_digest", null: false
     t.string   "authtoken",       null: false
+    t.string   "favorite",        null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "favorite"
     t.string   "profileImg"
     t.string   "description"
   end
