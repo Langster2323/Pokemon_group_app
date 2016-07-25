@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
+    user = User.new(params[:id])
     if user.save
       render json: user.to_json, status: 200
     else
