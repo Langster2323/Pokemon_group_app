@@ -25,6 +25,13 @@ Things you may want to cover:
 
 Best of Pokemon
 
+README:
+
+https://github.com/Langster2323/Pokemon_group_app/blob/master/README.md
+
+
+
+
 This app accumulates the likes and favorites of the entire Pokemon universe from the users. The users pick their favorite all time Pokemon, and the app holds the users results. There's 720 Pokemon in the Poke universe, and our users will get to decide which Pokemon is the most desirable.
 
 Getting started(Check out the app)
